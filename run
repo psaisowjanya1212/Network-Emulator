@@ -1,0 +1,24 @@
+#!/bin/sh
+if [ "$1" = 'b1' ]; then
+    ./bridge cs1 8
+elif [ "$1" = 'b2' ]; then
+    ./bridge cs2 8
+elif [ "$1" = 'b3' ]; then
+    ./bridge cs3 8
+elif [ "$1" = 'A' ]; then
+    ./station -no ifaces/ifaces.a rtables/rtable.a hosts
+elif [ "$1" = 'B' ]; then
+    ./station -no ifaces/ifaces.b rtables/rtable.b hosts
+elif [ "$1" = 'C' ]; then
+    ./station -no ifaces/ifaces.c rtables/rtable.c hosts
+elif [ "$1" = 'D' ]; then
+    ./station -no ifaces/ifaces.d rtables/rtable.d hosts
+elif [ "$1" = 'E' ]; then
+    ./station -no ifaces/ifaces.e rtables/rtable.e hosts
+elif [ "$1" = 'R1' ]; then
+    ./station -route ifaces/ifaces.r1 rtables/rtable.r1 hosts
+elif [ "$1" = 'R2' ]; then
+    ./station -route ifaces/ifaces.r2 rtables/rtable.r2 hosts
+else
+    echo "Not Valid"
+fi
